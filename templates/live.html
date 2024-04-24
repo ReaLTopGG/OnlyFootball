@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    live
+{% endblock %}
+{% block main %}
+    {% if matches %}
+        <h1>Live matches: </h1>
+        <div class="container-live">
+            {% for match in matches %}
+                <div class="match-details">
+                    <div class="match-names">
+                        <span class="march-team">{{match.home_team}}</span> <b>vs</b> <span class="march-team">{{match.away_team}}</span>
+                    </div>
+                    <div>
+                        <span>{{match.home_score}}</span> - <span>{{match.away_score}}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h1>Sorry :(</h1>
+        <div>
+            <h3>There are not currently matches in this moment</h3>
+            {% if teams %}
+                <p>This are the teams you are currently following</p>
+                <ul>
+                    {% for team in teams %}
+                        <form action="/search" method="post">
+                            <li><button name="team" type="submit" class="btn btn-outline-light btn-lg">{{team}}</button></li>
+                        </form>
+                    {% endfor%}
+                </ul>
+            {% else %}
+                <p>You are not currently following any teams, If you want to see your favourite team here, add as favourite <a href="/search">here</a></p>
+            {% endif %}
+        </div>
+    {% endif %}
+    
+{% endblock %}

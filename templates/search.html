@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    search
+{% endblock %}
+{% block main %}
+    <h1>Team</h1>
+    <p>Enter your favourity team from one of the top 5 leagues to see more information</p>
+    <form action="/search" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="team" type="text" placeholder="Team name">
+        </div>
+        <button type="submit" class="btn btn-outline-light">Search</button>
+    </form>
+{% endblock %}

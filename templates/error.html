@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    error
+{% endblock %}
+{% block main %}
+    <h1>{{type}}</h1>
+    <div class="custom-danger">
+        <p>The route you are trying to access is inavaliable. Please, enter the correct input</p>
+        <p>ErrorType: {{message}}</p>
+    </div>
+{% endblock %}

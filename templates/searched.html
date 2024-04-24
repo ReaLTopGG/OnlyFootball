@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    searched
+{% endblock %}
+{% block main %}
+    <h1>Matches of {{team}}</h1>
+    <form action="/searched" method="post">
+        <button name="team" value="{{team}}"type="submit" class="btn btn-outline-light btn-lg">Add favourite</button>
+    </form>
+    <div class="container">
+        <div class="content-area1">
+            {% for match in matches %}
+                <div class ="match-details">
+                    <div><p style="font-size: 1.1rem;">{{match.date}}</p></div>
+                    <div class="match-names">
+                        <span class="match-team">{{match.home}}</span> <b>vs</b> <span class="match-team">{{match.away}}</span>
+                    </div>
+                    <div>
+                        <span class="{{match.home_winner}}">{{match.h_goals}}</span> - 
+                        <span class="{{match.away_winner}}">{{match.a_goals}}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="content-area2">
+            <h3>{{lineup[0].formation}}</h3>
+            <div class="lineup-grid">
+                {% for player in lineup[0].players %}
+                    <div class="player {{player.grid}}">{{player.name}}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

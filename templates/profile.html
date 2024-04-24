@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    profile
+{% endblock %}
+{% block main %}
+    <h1>Hello {{user}}</h1>
+    <div>
+        <p>Welcome to Only Football, a place for football only fans</p>
+    </div>
+    {% if teams %}
+        <p>This are the teams you are currently following</p>
+        <ul>
+            {% for team in teams %}
+                <form action="/search" method="post">
+                    <li><button name="team" value="{{team}}" type="submit" class="btn btn-outline-light btn-lg">{{team}}</button></li>
+                </form>
+            {% endfor%}
+        </ul>
+    {% else %}
+        <p>You are not currently following any teams, If you want to see your favourite team here, add as favourite</p>
+    {% endif %}
+
+{% endblock %}

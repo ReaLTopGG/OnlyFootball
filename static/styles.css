@@ -1,0 +1,93 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .white
+{
+    color: #fff;
+    text-shadow: 0.08em 0.08em 0.08em #000;
+    font-size: xx-large;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+    font-size: xx-large;
+    text-shadow: 0.08em 0.08em 0.08em #000;
+}
+  
+
+  @media (max-width: 768px) {
+    table {
+      font-size: 1.5rem;
+    }
+  }
+
+  .container {
+    display: flex;
+  }
+  .container-live{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+  }
+  .content-area1,
+  .content-area2 {
+    flex: 1;  /* Makes both areas equally sized */
+  }
+  
+  .content-area1 {
+    display: flex; /* Makes content stack vertically */
+    flex-direction: column;
+    text-align: center; 
+  }
+  .match-details{
+    padding: 10px; /* 10px padding on all sides */
+    border: 3px solid #ddd;
+    margin-bottom: 1rem;
+
+}
+.player {
+    width: calc(33% - 10px); /* Adjust width for formation */
+    margin: 5px; /* Add space between players */
+    text-align: center; /* Or adjust as needed */
+    font-weight: bold; /* Highlight player names */
+}
+
+.lineup-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow for multiple rows if needed */
+    justify-content: center; /* Center players horizontally */
+}
+h3 {
+    text-align: center; 
+    font-size: 1.2rem; 
+    margin-bottom: 0.5rem; 
+}
+main, footer {
+    background-color: rgba(40, 160, 80, 0.8); /* Adjust opacity and color as needed */
+  }
+  
+  /* Add a subtle gradient effect (optional) */
+  main, footer {
+    background-image: linear-gradient(to bottom, rgba(40, 160, 80, 0.9), rgba(40, 160, 80, 0.7));
+  }
+
+button{
+    margin-bottom: 1.5rem;
+}
+
+.match-names{
+    justify-content: space-between;
+}
+.match-team {
+    display: flex-grow;
+  }
+span{
+    text-align: center;
+    font-size: 1.3rem;
+    text-shadow: 0.06em 0.06em 0.06em #000; 
+}
